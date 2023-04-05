@@ -36,7 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 300,
                     height: 300,
                     decoration: BoxDecoration(
-                      color: Colors.white,
                       shape: BoxShape.circle,
                     ),
                     child: Column(
