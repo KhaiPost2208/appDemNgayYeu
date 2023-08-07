@@ -9,31 +9,18 @@ import 'package:flutter/animation.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  DateTime dateTime = DateTime(2025, 2, 1, 10, 20);
+  DateTime dateTime = DateTime(2020);
   DateTime nowTime = DateTime.now();
-
 
   // final numOfDays = nowTime.difference(dateTime).inDays;
 
   @override
   Widget build(BuildContext context) {
-
-    // final tween = MultiTrackTween([
-    //   Track("color1").add(Duration(seconds: 3),
-    //       ColorTween(begin: Color(0xffD38312), end: Colors.lightBlue.shade900)),
-    //   Track("color2").add(Duration(seconds: 3),
-    //       ColorTween(begin: Color(0xffA83279), end: Colors.blue.shade600))
-    // ]);
-
-
-
     final numOfDays = nowTime.difference(dateTime).inDays;
     return Scaffold(
       body: Container(
@@ -52,15 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                     width: 350,
                     height: 350,
-                    // decoration: BoxDecoration(
-                    //   shape: BoxShape.circle,
-                    //   color: Colors.pinkAccent,
-                    //   gradient: LinearGradient(
-                    //       begin: Alignment.topCenter,
-                    //       end: Alignment.bottomCenter,
-                    //       colors: [color1, color2],
-                    //   ),
-                    // ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -69,10 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           'Bên Nhau',
                           style: GoogleFonts.allura(
                             textStyle: TextStyle(fontSize: 40),
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         ZoomTapAnimation(
                           onTap: () {
                             showCupertinoModalPopup(
@@ -80,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (BuildContext context) => SizedBox(
                                 height: 300,
                                 child: CupertinoDatePicker(
+                                  maximumYear: 2023,
                                   backgroundColor: Colors.white,
                                   initialDateTime: dateTime,
                                   onDateTimeChanged: (DateTime newTime) {
@@ -103,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   textStyle: TextStyle(
                                       fontSize: 65,
                                       fontWeight: FontWeight.bold),
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                               ),
                             ),
@@ -119,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           'Ngày',
                           style: GoogleFonts.allura(
                             textStyle: TextStyle(fontSize: 40),
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ],

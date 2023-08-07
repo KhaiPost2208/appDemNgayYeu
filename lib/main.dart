@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'Screen/HomePage.dart';
-import 'Screen/TotalDay.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,4 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
